@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Tip calculator app</title>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="images/logo.svg" alt="Splitter logo">
+    </header>
+    <section>
+      <div>
+        <label for="input">Bill</label>
+        <div class="input-wrap">
+          <img src="images/icon-dollar.svg">
+          <input type="number" placeholder="0.00">
+        </div>
+        <label for="input">Select Tip %</label>
+        <div class="button-wrapper">
+          <button class="button">5%</button>
+          <button class="button">10%</button>
+          <button class="button">15%</button>
+          <button class="button">25%</button>
+          <button class="button">50%</button>
+          <input type="number" placeholder="Custom" id="custom-tip" class="button" />
+        </div>
+        <label for="input">Number of People</label>
+        <div class="input-wrap">
+          <img src="images/icon-person.svg">
+          <input type="number" placeholder="0">
+        </div>
+      </div>
+      <div class="calculations">
+        <div>
+          <div>
+            Tip Amount
+          </div>
+          $4.27
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
