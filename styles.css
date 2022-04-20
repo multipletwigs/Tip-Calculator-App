@@ -6,12 +6,13 @@
     --gray-cyan: hsl(184, 14%, 56%); 
     --light-gray-cyan: hsl(185, 41%, 84%);
     --vlight-gray-cyan: hsl(189, 41%, 97%);
+    --strong-cyan: hsl(172, 67%, 45%);
 }
 
 body{
     background-color: var(--light-gray-cyan);
     margin: 0; 
-    padding: 0;
+    padding: 2em;
     font-family: 'Space Mono';
 }
 
@@ -22,13 +23,11 @@ main{
     align-items: center;
     flex-direction: column;
     gap: 50px;
-    height: 100vh;
-    width: 100vw;
+    height: fit-content;
 }
 
 section{
     width: min(90%, 1000px);
-    height: fit-content;
     box-sizing: border-box;
     padding-inline: 1.2em;
     padding-block: 35px; 
@@ -36,6 +35,7 @@ section{
     background-color: white;
     display: flex;
     gap: 2em;
+    align-items: stretch;
 }
 
 @media screen and (max-width: 992px) {
@@ -46,11 +46,13 @@ section{
   }
 
 .calculations{
-    box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    height: inherit!important;
+
+    box-sizing: border-box;
     background-color: var(--very-dark-cyan);
     border-radius: 10px;
+
     padding-inline: 2em;
     padding: 1.5em;
 }
@@ -70,7 +72,12 @@ label[for=input]{
     display:inline-block
 }
 
-input[type=number]{
+input[type=number]::placeholder, input[type=text]::placeholder{
+    text-align: right;
+    color: var(--gray-cyan);
+}
+
+input[type=number], input[type=text]{
     width: 100%;
 
     text-align: right;
@@ -81,10 +88,13 @@ input[type=number]{
     background: none;
 
     font: normal normal 700 1.5em 'Space Mono';
+    color: var(--very-dark-cyan);
 }
 
-input[type=number]::placeholder{
-    text-align: right;
+/*Remove the arrows from the number input*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 .button-wrapper{
@@ -93,7 +103,9 @@ input[type=number]::placeholder{
     grid-gap: 0.8em;
 }
 
-.button-wrapper > button{
+/*Keeping styling as specific as possible, but
+.button was included for global button styling*/
+.button-wrapper > button, .button{
     border-radius: 5px;
     padding: 0.5em;
     color:var(--light-gray-cyan);
@@ -103,6 +115,83 @@ input[type=number]::placeholder{
     font: normal normal 700 1.3em 'Space Mono';
 }
 
+.button-wrapper > button:focus{
+    background-color: var(--strong-cyan);
+    color:var(--very-dark-cyan);
+}
+
+.calculations{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.calc-wrapper{
+    display: flex; 
+    flex: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.calc-header{
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white; 
+}
+
+.calc-header > span{
+    font-size: 0.8em;
+    color: var(--gray-cyan)
+}
+
+.calc-val{
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--strong-cyan);
+}
+
+.respond-btn-wrap{
+    display: flex; 
+    flex-direction: column;
+    gap: 0.5em;
+    margin-top: auto;
+}
+
+/*Overwrite by .button*/
+.respond-btn{
+    background-color: var(--strong-cyan)!important;
+    color: var(--vlight-gray-cyan)!important;
+}
+
+.respond-btn:active{
+    background-color: var(--gray-cyan)!important;
+}
+
+#reset-btn:focus{
+    background-color: var(--strong-cyan);
+    color: var(--vlight-gray-cyan);
+}
+
 #custom-tip::placeholder{
     text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

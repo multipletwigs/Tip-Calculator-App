@@ -14,7 +14,11 @@
       <img src="images/logo.svg" alt="Splitter logo">
     </header>
     <section>
-      <div>
+      <div class="inputs">
+        <label for="input">Split Name</label>
+        <div class="input-wrap">
+          <input type="text" placeholder="Enter Name">
+        </div>
         <label for="input">Bill</label>
         <div class="input-wrap">
           <img src="images/icon-dollar.svg">
@@ -36,11 +40,23 @@
         </div>
       </div>
       <div class="calculations">
-        <div>
-          <div>
-            Tip Amount
+        <div class="calc-wrapper">
+          <div class="calc-header">
+            Tip Amount <br>
+            <span>/ person</span>
           </div>
-          $4.27
+          <div class="calc-val" id="tip-amount">$0.00</div>
+        </div>
+        <div class="calc-wrapper">
+          <div class="calc-header">
+            Total <br>
+            <span>/ person</span>
+          </div>
+          <div class="calc-val" id="tip-per-person">$0.00</div>
+        </div>
+        <div class="respond-btn-wrap">
+          <button id="reset-btn" class="button respond-btn">Reset</button>
+          <button id="save-btn" class="button respond-btn">Save Split</button>
         </div>
       </div>
     </section>
