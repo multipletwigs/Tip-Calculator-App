@@ -173,6 +173,11 @@ input[type=number]::-webkit-inner-spin-button {
     color: var(--vlight-gray-cyan);
 }
 
+#custom-tip{
+    padding: 0; 
+    text-align: center;
+}
+
 #custom-tip::placeholder{
     text-align: center;
 }
