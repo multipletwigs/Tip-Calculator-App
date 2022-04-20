@@ -12,7 +12,7 @@
 body{
     background-color: var(--light-gray-cyan);
     margin: 0; 
-    padding: 2em;
+    padding-top: 2em;
     font-family: 'Space Mono';
 }
 
@@ -27,7 +27,7 @@ main{
 }
 
 section{
-    width: min(90%, 1000px);
+    width: min(100%, 1000px);
     box-sizing: border-box;
     padding-inline: 1.2em;
     padding-block: 35px; 
